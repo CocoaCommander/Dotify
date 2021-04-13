@@ -5,14 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/tvUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btnChangeUser"
+        app:layout_constraintBottom_toBottomOf="@id/btnChangeUser"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Guest"
+        android:visibility="visible"
+        />
+
     <EditText
         android:id="@+id/etUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guest"
+        android:hint="Type in your username"
         app:layout_constraintTop_toTopOf="@id/btnChangeUser"
         app:layout_constraintBottom_toBottomOf="@id/btnChangeUser"
         app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
         />
 
     <Button
@@ -33,7 +45,7 @@
         android:src="@drawable/gurenge"
         />
     <TextView
-        android:id="@+id/songTitle"
+        android:id="@+id/tvSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ivAlbumCover"
@@ -42,19 +54,19 @@
         android:text="Gurenge"
         />
     <TextView
-        android:id="@+id/artists"
+        android:id="@+id/tvArtists"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/songTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSongTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="LiSA"
         />
     <TextView
-        android:id="@+id/numPlays"
+        android:id="@+id/tvNumPlays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/artists"
+        app:layout_constraintTop_toBottomOf="@+id/tvArtists"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="0 plays"
@@ -63,7 +75,7 @@
         android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/numPlays"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumPlays"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/ic_play"
@@ -79,7 +91,7 @@
         android:background="@drawable/ic_previous"
         />
     <ImageButton
-        android:id="@+id/btnSkip"
+        android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@+id/btnPlay"

@@ -9,10 +9,10 @@ This is similar to a very popular music playing app
 
 ## Screenshots
 ![image of the app working] 
-(./Screesnhots/working1.png)
+(Screesnhots/working1.png)
 
 ![image of the app working]
-(./Screesnhots/working2.png)
+(Screesnhots/working2.png)
 
 
 

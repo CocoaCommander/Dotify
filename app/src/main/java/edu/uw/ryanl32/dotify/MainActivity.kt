@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             btnNextClicked()
         }
         btnPlay.setOnClickListener {
-
+            btnPlayClicked()
         }
     }
 

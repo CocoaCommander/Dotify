@@ -8,9 +8,9 @@ This is similar to a very popular music playing app
 
 
 ## Screenshots
-![image of the app working] (working1.png)
+![image of the app working](working1.png)
 
-![image of the app working] (working2.png)
+![image of the app working](working2.png)
 
 
 

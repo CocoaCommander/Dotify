@@ -32,8 +32,8 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
         return listOfSongs.size
     }
 
-    fun updateSongs(newListofSongs: List<Song>) {
-        this.listOfSongs = newListofSongs
+    fun updateSongs(newListOfSongs: List<Song>) {
+        this.listOfSongs = newListOfSongs
 
         notifyDataSetChanged()
     }

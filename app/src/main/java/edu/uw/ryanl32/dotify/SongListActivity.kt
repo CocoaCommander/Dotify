@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import edu.uw.ryanl32.dotify.databinding.ActivitySongListBinding
 
@@ -27,7 +28,13 @@ class SongListActivity : AppCompatActivity() {
             rvSongList.adapter = adapter
 
             adapter.onSongClickListener = { position, song ->
-                Toast.makeText(this@SongListActivity, "Position: $position SongTitle ${song.title}", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this@SongListActivity, "Position: $position SongTitle ${song.title}", Toast.LENGTH_SHORT).show()
+                tvMiniPlayerSongTitle.text = "${song.title} - ${song.artist}"
+                clMiniPlayer.visibility = View.VISIBLE
+            }
+
+            btnShuffle.setOnClickListener {
+                adapter.updateSongs(allSongs.toMutableList().shuffled())
             }
         }
     }

@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/itemRoot"
-    android:orientation="horizontal">
-<!--    refactor src below  -->
+    android:id="@+id/itemRoot">
     <ImageView
         android:id="@+id/ivSongPic"
         android:layout_width="70dp"

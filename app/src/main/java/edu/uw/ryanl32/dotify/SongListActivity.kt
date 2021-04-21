@@ -2,13 +2,10 @@ package edu.uw.ryanl32.dotify
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import edu.uw.ryanl32.dotify.databinding.ActivitySongListBinding
-import kotlin.math.log
-
 class SongListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySongListBinding
@@ -30,7 +27,6 @@ class SongListActivity : AppCompatActivity() {
 
             adapter.onSongClickListener = { _, song ->
                 currSong = song
-                Log.i("CURRENT_SONG", currSong.title)
                 tvMiniPlayerSongTitle.text = "${song.title} - ${song.artist}"
                 clMiniPlayer.visibility = View.VISIBLE
             }

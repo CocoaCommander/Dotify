@@ -32,32 +32,13 @@ fun startPlayerActivity(context: Context, song: Song) {
 class PlayerActivity : AppCompatActivity() {
 
     private var numPlaysCounter = Random.nextInt(0, 300)
-//    private lateinit var tvNumPlays: TextView
-//    private lateinit var btnPrev: ImageButton
-//    private lateinit var btnPlay: ImageButton
-//    private lateinit var btnNext: ImageButton
     private lateinit var binding: ActivityPlayerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_player)
-//        tvNumPlays = findViewById(R.id.tvNumPlays)
-//        btnPrev = findViewById(R.id.btnPrev)
-//        btnPlay = findViewById(R.id.btnPlay)
-//        btnNext = findViewById(R.id.btnNext)
-//
-//        tvNumPlays.text = numPlaysCounter.toString() + "plays"
-//
-//        btnPrev.setOnClickListener {
-//            btnPrevClicked()
-//        }
-//        btnNext.setOnClickListener {
-//            btnNextClicked()
-//        }
-//        btnPlay.setOnClickListener {
-//            btnPlayClicked()
-//        }
+
         binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
+
         with(binding) {
             tvNumPlays.text = numPlaysCounter.toString() + "plays"
 

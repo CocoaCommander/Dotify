@@ -2,19 +2,20 @@ package edu.uw.ryanl32.dotify
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import edu.uw.ryanl32.dotify.databinding.ActivitySongListBinding
+import kotlin.math.log
 
 class SongListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySongListBinding
+    private lateinit var currSong: Song
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_song_list)
 
         binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root) }
 
@@ -27,14 +28,19 @@ class SongListActivity : AppCompatActivity() {
 
             rvSongList.adapter = adapter
 
-            adapter.onSongClickListener = { position, song ->
-                // Toast.makeText(this@SongListActivity, "Position: $position SongTitle ${song.title}", Toast.LENGTH_SHORT).show()
+            adapter.onSongClickListener = { _, song ->
+                currSong = song
+                Log.i("CURRENT_SONG", currSong.title)
                 tvMiniPlayerSongTitle.text = "${song.title} - ${song.artist}"
                 clMiniPlayer.visibility = View.VISIBLE
             }
 
             btnShuffle.setOnClickListener {
                 adapter.updateSongs(allSongs.toMutableList().shuffled())
+            }
+
+            clMiniPlayer.setOnClickListener {
+                startPlayerActivity(this@SongListActivity, currSong)
             }
         }
     }

@@ -4,44 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".PlayerActivity"
     android:padding="16dp">
-    <TextView
-        android:id="@+id/tvUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/btnChangeUser"
-        app:layout_constraintBottom_toBottomOf="@id/btnChangeUser"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Guest"
-        android:textSize="20sp"
-        android:visibility="visible"
-        />
-
-    <EditText
-        android:id="@+id/etUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Type in your username"
-        app:layout_constraintTop_toTopOf="@id/btnChangeUser"
-        app:layout_constraintBottom_toBottomOf="@id/btnChangeUser"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible"
-        />
-
-    <Button
-        android:id="@+id/btnChangeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change User"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
     <ImageView
         android:id="@+id/ivAlbumCover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnChangeUser"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/gurenge"

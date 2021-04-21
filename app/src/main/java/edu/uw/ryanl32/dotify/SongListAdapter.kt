@@ -23,7 +23,7 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
-        val song = mutableSongs[position]
+        val song = listOfSongs[position]
         with(holder.binding) {
             tvSongListArtistName.text = song.artist
             tvSongListSongName.text = song.title
@@ -36,7 +36,7 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-        return mutableSongs.size
+        return listOfSongs.size
     }
 
     fun updateSongs(newListOfSongs: List<Song>) {
@@ -44,8 +44,10 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         this.mutableSongs.clear()
         this.mutableSongs.addAll(newListOfSongs)
+        this.listOfSongs = newListOfSongs
 
         diffResult.dispatchUpdatesTo(this)
+        notifyDataSetChanged()
     }
 
     class SongViewHolder(val binding: ItemSongBinding): RecyclerView.ViewHolder(binding.root)

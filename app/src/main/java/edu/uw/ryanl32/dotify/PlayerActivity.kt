@@ -40,7 +40,7 @@ class PlayerActivity : AppCompatActivity() {
         binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
 
         with(binding) {
-            tvNumPlays.text = numPlaysCounter.toString() + "plays"
+            tvNumPlays.text = "${numPlaysCounter.toString()} plays"
 
             btnPrev.setOnClickListener {
                 btnPrevClicked()
@@ -82,6 +82,6 @@ class PlayerActivity : AppCompatActivity() {
 
     private fun btnPlayClicked(): String {
         numPlaysCounter++
-        return numPlaysCounter.toString() + "plays"
+        return "${numPlaysCounter.toString()} plays"
     }
 }

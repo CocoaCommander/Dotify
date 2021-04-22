@@ -43,11 +43,12 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
         val diffCallback = SongDiffCallback(this.mutableSongs, newListOfSongs)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         this.mutableSongs.clear()
+        notifyItemRangeRemoved(0, listOfSongs.size)
         this.mutableSongs.addAll(newListOfSongs)
+        notifyItemRangeInserted(0, newListOfSongs.size)
         this.listOfSongs = newListOfSongs
-
         diffResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
+
     }
 
     class SongViewHolder(val binding: ItemSongBinding): RecyclerView.ViewHolder(binding.root)

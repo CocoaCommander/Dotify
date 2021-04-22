@@ -27,7 +27,11 @@ class SongListActivity : AppCompatActivity() {
 
             adapter.onSongClickListener = { _, song ->
                 currSong = song
-                tvMiniPlayerSongTitle.text = "${song.title} - ${song.artist}"
+                var title = "${song.title} - ${song.artist}"
+                if (title.length > 25) {
+                    title = title.removeRange(25, title.length) + " . . ."
+                }
+                tvMiniPlayerSongTitle.text = title
                 clMiniPlayer.visibility = View.VISIBLE
             }
 

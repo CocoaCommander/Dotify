@@ -3,14 +3,17 @@
 This is similar to a very popular music playing app
 
 ## Extra credit
-1. A user is not allowed to apply a new username if the edit text field is empty.
-	- Toast pops up notifying the user they need to put in a username with one or more characters 
+n/a
 
 
 ## Screenshots
-![image of the app working](working1.png)
+![image of the app working](./hw2_screenshots/working1.png)
 
-![image of the app working](working2.png)
+![image of the app working](./hw2_screenshots/working2.png)
+
+![image of the app working](./hw2_screenshots/working3.png)
+
+![image of the app working](./hw2_screenshots/working4.png)
 
 
 

@@ -9,13 +9,7 @@ import edu.uw.ryanl32.dotify.databinding.ItemSongBinding
 
 class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
-    private val mutableSongs = mutableListOf<Song>()
-
     var onSongClickListener: (position: Int, song: Song) -> Unit = {_, _ -> }
-
-    init {
-        mutableSongs.addAll(listOfSongs)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         val binding = ItemSongBinding.inflate(LayoutInflater.from(parent.context))
@@ -40,14 +34,16 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
     }
 
     fun updateSongs(newListOfSongs: List<Song>) {
-        val diffCallback = SongDiffCallback(this.mutableSongs, newListOfSongs)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        this.mutableSongs.clear()
-        notifyItemRangeRemoved(0, listOfSongs.size)
-        this.mutableSongs.addAll(newListOfSongs)
-        notifyItemRangeInserted(0, newListOfSongs.size)
+//        val diffCallback = SongDiffCallback(this.listOfSongs, newListOfSongs)
+//        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        //this.mutableSongs.clear()
+        //notifyItemRangeRemoved(0, listOfSongs.size)
+        //this.mutableSongs.addAll(newListOfSongs)
+        //notifyItemRangeChanged(0, newListOfSongs.size)
+        //notifyItemRangeInserted(0, newListOfSongs.size)
         this.listOfSongs = newListOfSongs
-        diffResult.dispatchUpdatesTo(this)
+        this.notifyDataSetChanged()
+        //diffResult.dispatchUpdatesTo(this)
 
     }
 

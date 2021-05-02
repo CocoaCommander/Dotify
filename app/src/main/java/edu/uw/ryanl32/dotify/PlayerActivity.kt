@@ -14,6 +14,7 @@ import kotlin.random.Random
 //private const val SONG_ARTIST_KEY = "song_artist"
 //private const val SONG_IMAGE_KEY = "song_image"
 private const val SONG_KEY = "song_key"
+private const val NUM_PLAYS_KEY = "num_plays_key"
 
 fun startPlayerActivity(context: Context, song: Song) {
     with(context) {
@@ -39,6 +40,9 @@ class PlayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState != null) {
+            numPlaysCounter = savedInstanceState.getInt(NUM_PLAYS_KEY)
+        }
 
         binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
 
@@ -73,6 +77,11 @@ class PlayerActivity : AppCompatActivity() {
                 launchSettingsActivity(this@PlayerActivity, song, numPlaysCounter)
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(NUM_PLAYS_KEY, numPlaysCounter)
+        super.onSaveInstanceState(outState)
     }
 
     private fun btnPrevClicked() {
